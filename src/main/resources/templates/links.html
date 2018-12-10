@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Studentlist</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>List of all the links</h1>
+    <table>
+		<tr>
+		    <th>Link</th>
+		</tr>  
+    	<tr th:each = "Link : ${theLinks}">
+    		<td th:text="${Links.link}"></td>
+ 			<td><a th:href="@{/delete/{id}(id=${link.id})}">Delete</a></td>    		
+    	</tr>
+     </table>
+	 <a href="/add">Add link</a>    	
+</body>
+</html>
